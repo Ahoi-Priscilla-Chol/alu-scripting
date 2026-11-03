@@ -1,19 +1,12 @@
 #!/usr/bin/python3
-"""Queries the Reddit API and prints the titles of the first 10 hot posts."""
+"""Prints the titles of the first 10 hot posts of a subreddit."""
 import requests
 
 
 def top_ten(subreddit):
-    """Print the titles of the first 10 hot posts for a given subreddit.
-
-    Prints None if the subreddit is invalid.
-    """
-    if not subreddit or not isinstance(subreddit, str):
-        print(None)
-        return
-
+    """Print the titles of the first 10 hot posts, or None if invalid."""
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
-    headers = {"User-Agent": "alu-scripting:top_ten:v1.0 (by /u/alu_student)"}
+    headers = {"User-Agent": "linux:alu-scripting:v1.0 (by /u/your_username)"}
     params = {"limit": 10}
 
     try:
